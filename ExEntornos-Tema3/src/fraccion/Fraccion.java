@@ -1,15 +1,29 @@
 package fraccion;
 
 // Clase que define una fracción
+/**
+ * Clase para definir la fracción
+ * 
+ * @author fmigg
+ *
+ */
 public class Fraccion {
 	// Numerador
+	/**
+	 * Numerador
+	 */
 	private int num;
 
 	// Denominador
+	/**
+	 * Denominador
+	 */
 	private int den;
 
 	// Constructor por defecto
-
+	/**
+	 * Valor neutro 0/1
+	 */
 	public Fraccion() { // debe generar el valor neutro que es 0/1
 		num = 0;
 		den = 1;
@@ -17,6 +31,12 @@ public class Fraccion {
 	}
 
 	// Constructor con parámetros
+	/**
+	 * debo evitar crear fracciones con 0 en el divisor
+	 * 
+	 * @param num
+	 * @param den
+	 */
 	public Fraccion(int num, int den) {
 		// debo evitar crear fracciones con 0 en el divisor
 		this.num = num;
@@ -29,6 +49,11 @@ public class Fraccion {
 	}
 
 	// Constructor copia
+	/**
+	 * Este método configura lsa variables, las obtiene y devuelve su valor actual
+	 * 
+	 * @param f
+	 */
 	public Fraccion(final Fraccion f) {
 		num = f.num;
 		den = f.den;
@@ -41,6 +66,10 @@ public class Fraccion {
 
 	}
 
+	/**
+	 * 
+	 * @return
+	 */
 	public int getNum() {
 		return num;
 
@@ -55,6 +84,11 @@ public class Fraccion {
 	}
 
 	// Cálculo del máximo común divisor por el algoritmo de Euclides
+	/**
+	 * Cálculo del máximo común divisor por el algoritmo de Euclides
+	 * 
+	 * @return
+	 */
 	private int mcd() {
 		int u = (Math.abs(num)); // valor absoluto del numerador
 		int v = (Math.abs(den)); // valor absoluto del denominador
@@ -71,6 +105,9 @@ public class Fraccion {
 	}
 
 	// método para simplificar fracciones
+	/**
+	 * método para simplificar fracciones
+	 */
 	public void simplificar() {
 		int n = mcd();
 		num = num / n;
@@ -78,7 +115,9 @@ public class Fraccion {
 	}
 
 	// Método toString
-
+/**
+ * Método toString
+ */
 	public String toString() {
 		String mensaje = num + "/" + den;
 		return mensaje;
